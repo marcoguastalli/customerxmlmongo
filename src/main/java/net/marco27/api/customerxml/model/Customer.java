@@ -3,6 +3,7 @@ package net.marco27.api.customerxml.model;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "customers")
@@ -13,6 +14,7 @@ public class Customer {
     private String id;
 
     @JacksonXmlProperty
+    @Indexed(unique = true)
     private String firstname;
 
     @JacksonXmlProperty
