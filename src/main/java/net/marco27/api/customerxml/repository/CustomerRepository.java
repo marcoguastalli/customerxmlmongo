@@ -1,9 +1,7 @@
 package net.marco27.api.customerxml.repository;
 
 import net.marco27.api.customerxml.model.Customer;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-@Repository
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+public interface CustomerRepository extends MongoRepository<Customer, String> {
 }

@@ -42,7 +42,7 @@ public class ApiController {
     }
     
     @GetMapping(value="/customer/{id}", produces=MediaType.APPLICATION_XML_VALUE)
-    public Customer getCustomerById(@PathVariable Long id) {
+    public Customer getCustomerById(@PathVariable String id) {
     	Optional<Customer> optCustomer = customerRepository.findById(id);
     	
     	if(optCustomer.isPresent()) {
@@ -53,7 +53,7 @@ public class ApiController {
     }
     
     @PutMapping(value="/customer/{id}", produces=MediaType.APPLICATION_XML_VALUE)
-    public Customer putCustomer(@PathVariable Long id,
+    public Customer putCustomer(@PathVariable String id,
             @Valid @RequestBody Customer customerUpdated) {
     	
     	return customerRepository.findById(id)
@@ -66,7 +66,7 @@ public class ApiController {
     }
     
     @DeleteMapping("/customer/{id}")
-    public String deleteCustomer(@PathVariable Long id) {
+    public String deleteCustomer(@PathVariable String id) {
         return customerRepository.findById(id)
                 .map(customer -> {
                     customerRepository.delete(customer);

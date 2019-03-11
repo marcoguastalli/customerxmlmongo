@@ -2,46 +2,40 @@ package net.marco27.api.customerxml.model;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "customers")
+@Document(collection = "customers")
 @JacksonXmlRootElement(localName = "Customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
-    @SequenceGenerator(sequenceName = "customer_seq", allocationSize = 1, name = "CUST_SEQ")
     @JacksonXmlProperty(isAttribute = true)
-    private Long id;
+    private String id;
 
     @JacksonXmlProperty
-    @Column(name = "firstname")
     private String firstname;
 
     @JacksonXmlProperty
-    @Column(name = "lastname")
     private String lastname;
 
     @JacksonXmlProperty
-    @Column(name = "age")
     private int age;
 
     public Customer() {
     }
 
-    public Customer(Long id, String firstname, String lastname, int age) {
+    public Customer(String id, String firstname, String lastname, int age) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.age = age;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

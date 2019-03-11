@@ -29,7 +29,7 @@ public class Application {
     }
 
     private ApiInfo generateApiInfo() {
-        return new ApiInfo("SpringBootXmlApiApplication", "File System API", "Version 1.0",
+        return new ApiInfo("SpringBootXmlApiApplicationMongoDB", "File System API", "Version 1.0",
                 "urn:tos", "marcoguastalli", "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0");
     }
 }
