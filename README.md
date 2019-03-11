@@ -11,6 +11,9 @@ mongod --dbpath /Users/marcoguastalli/opt/MongoDB/m27data/db
 mongo --host 127.0.0.1:27017
 use local
 show collections
+db.customers.count()
+db.customers.find()
+use customers
 
 # swagger
 http://localhost:8090/swagger-ui.html
