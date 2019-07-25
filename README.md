@@ -8,6 +8,7 @@ mvn clean integration-test
 #run
 mvn clean spring-boot:run
 mongod --dbpath /Users/marcoguastalli/opt/MongoDB/m27data/db
+mongod --dbpath /Users/marco27/opt/MongoDB/m27data/db
 mongo --host 127.0.0.1:27017
 use local
 show collections
@@ -15,11 +16,11 @@ db.customers.count()
 db.customers.find()
 use customers
 
+### play
+mvn clean spring-boot:run
+
 # swagger
 http://localhost:8090/swagger-ui.html
-
-### play
-get the Oracle DDBB VirtualBox IP and configure it
 
 ##### POST
 curl -X POST --header "Content-Type: application/json" --header "Accept: application/xml" -d "{
